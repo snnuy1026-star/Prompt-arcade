@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PromptArcade — Infinite Games Created by AI</title>
+  <meta name="description" content="모든 플레이어가 서로 다른 엔딩과 세계를 만나는 무한 생성형 아케이드, PromptArcade." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ① Splash -->
+  <div id="splash" class="splash" hidden>
+    <div class="splash-inner">
+      <div class="splash-logo" data-logo="lg"></div>
+      <div class="splash-bar"><span></span></div>
+      <p class="splash-text">Booting infinite worlds…</p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#/" class="logo" data-logo="sm" aria-label="PromptArcade 홈"></a>
+      <form class="search" id="headerSearch" role="search">
+        <input type="search" placeholder="Search worlds, prompts, creators..." aria-label="검색" />
+        <span class="search-scope">Games ▾</span>
+        <button type="submit" class="search-btn" aria-label="검색하기">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+      </form>
+      <nav class="nav" id="mainNav">
+        <a href="#/explore" data-nav="explore">Explore</a>
+        <a href="#/remix" data-nav="remix">Remix</a>
+        <a href="#/market" data-nav="market">Market</a>
+        <a href="#/news" data-nav="news">News</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#/wallet" class="credit-pill" id="creditPill" title="My Wallet">
+          <span class="gem"></span><span id="creditValue">1,420</span>&nbsp;Cr
+        </a>
+        <div id="authSlot"></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <!-- Bottom risk-free band (landing only) -->
+  <div class="trial-band" id="trialBand" hidden>
+    <p>Start your <strong>30-day risk-free trial</strong> with free Compute Credits. No download required.</p>
+    <button class="band-cta" data-action="get-started">Claim free credits →</button>
+    <button class="band-close" aria-label="닫기" data-action="close-band">×</button>
+  </div>
+
+  <!-- Mobile tab bar -->
+  <nav class="tabbar" id="tabbar">
+    <a href="#/" data-tab="home"><i>⌂</i>Home</a>
+    <a href="#/explore" data-tab="explore"><i>◫</i>Explore</a>
+    <a href="#/remix" data-tab="remix"><i>⑂</i>Remix</a>
+    <a href="#/market" data-tab="market"><i>◈</i>Market</a>
+    <a href="#/more" data-tab="more"><i>☰</i>More</a>
+  </nav>
+
+  <div id="modalRoot"></div>
+  <div id="toastRoot" class="toast-root" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/flows.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
